@@ -1,19 +1,3 @@
-/*
- * Copyright © 2019-today Peter M. Stahl pemistahl@gmail.com
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either expressed or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 //! ## 1. What does this tool do?
 //!
 //! *grex* is a library as well as a command-line utility that is meant to simplify the often
@@ -260,10 +244,8 @@
 //! 3. The minimized DFA is expressed as a system of linear equations which are solved with
 //!    [Brzozowski's algebraic method](http://cs.stackexchange.com/questions/2016/how-to-convert-finite-automata-to-regular-expressions#2392),
 //!    resulting in the final regular expression.
-
 #[macro_use]
 mod macros;
-
 mod builder;
 mod char_range;
 mod cluster;
@@ -277,14 +259,10 @@ mod quantifier;
 mod regexp;
 mod substring;
 mod unicode_tables;
-
 #[cfg(feature = "python")]
 mod python;
-
 #[cfg(target_family = "wasm")]
 mod wasm;
-
 pub use builder::RegExpBuilder;
-
 #[cfg(target_family = "wasm")]
 pub use wasm::RegExpBuilder as WasmRegExpBuilder;
